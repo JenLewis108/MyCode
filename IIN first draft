@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>IIN Test</title>
+<meta charset="utf-8">
+<style>
+input, button, select{float:left; margin: 10px 20px;}
+label{float:left;  margin: 10px 10px; font: 12px arial,helvetica, sans-serif}
+div{margin:3px auto 5px; display:inline-block; width:100%}
+span{margin-left:20px; color:green; background-color:yellow;}
+.has-error div {border:solid 1px red; color:red}
+.has-error div span {background-color: #ffffff}
+</style>
+<script>
+
+var submitObj = {};
+window.onload= function(e){myEventLoader()};
+function myEventLoader(e){
+
+   document.getElementById("nm").addEventListener('change',findFactor);
+   document.getElementById("fc").addEventListener('change',findColor);
+   document.getElementById("submit").addEventListener('click',myValidate);
+   document.getElementById("reset").addEventListener('click',resetMe);
+
+}
+
+
+function findFactor(e){
+         var myArr = [],
+				num = e.srcElement.value,
+         		myNum = null,
+         		myInd = null;
+
+
+    if(num.trim().match(/^[0-9]\d*$/)){
+            myArr.push(0);
+            num = num.trim();
+            for (i=1;i<=num;i++){
+                if (num % i == 0){
+                    myArr.push(i);
+                }
+            }
+                    if (myArr.length == 1) { myNum = 0;}
+                    else {
+                        myInd = myArr.length - 2;
+                        myNum = myArr[myInd];
+                    }
+                document.getElementById("nmSp").innerHTML = myNum;
+    } else {
+        document.getElementById("nmSp").innerHTML = "This: "+ num + " is not a number.";
+    }
+}
+
+/* this would be more simple to do in a div, but I am trying to be all HTML5 */
+function findColor(e){
+		var mySrc = e.srcElement,
+		hex = mySrc.value;
+        var c = document.getElementById("fcCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = hex;
+        ctx.fillRect(0,0,15,15);
+        document.getElementById("fcSp").innerHTML = hex;
+}
+/* function called on submit */
+function myValidate(e){
+
+           	console.log(document.getElementById("myForm").elements);
+
+
+           myDivs = document.getElementsByTagName("DIV");
+            for(r in myDivs) {
+						if (myDivs[r] instanceof Element) {
+                            if(myDivs[r].className == "has-error"){
+                                alert("cannot validate, there are errors");
+                                return false;
+							}
+			 		}
+			 }
+		console.log(JSON.stringify(submitObj));
+        return false;
+}
+
+function resetMe(e){
+
+        myDivs = document.getElementsByTagName("DIV");
+            for(y in myDivs) {
+						if (myDivs[y] instanceof Element) {
+								myDivs[y].className = "";
+							}
+			 }
+        mySpan = document.getElementsByTagName("SPAN");
+			for(x in mySpan) {
+						if (mySpan[x] instanceof Element) {
+								mySpan[x].innerHTML = "";
+							}
+			 }
+       //clear out the canvas
+    var c = document.getElementById("fcCanvas");
+    var ctx = c.getContext("2d");
+    ctx.clearRect(0, 0, 15, 15);
+
+}
+
+
+</script>
+</head>
+<body>
+<form id="myForm" enctype='application/json' onsubmit="return false;" >
+    <div id="fnDiv"><label>First Name</label><input type="text" name="fn" id="fn" length="30px" maxlength="50px"/><span id="fnSp"></span></div>
+    <div id="lnDiv"><label>Last Name</label><input type="text" name="ln" id="ln" length="30px" maxlength="50px"/><span id="lnSp"></span></div>
+    <div id="fdDiv"><label>Favorite Food</label><input type="text" name="fd" id="fd" length="50px" maxlength="100px"/><span id="fdSp"></span></div>
+    <div id="nmDiv"><label>Favorite Number</label><input type="number" name="nm" id="nm" length="8" maxlength="8"/><span id="nmSp"></span></div>
+
+    <div id="dwDiv"><label>Favorite Day of the Week</label>
+        <select name="dw" id="dw">
+          <option value="0">Select a day</option>
+          <option value="Sunday">Sunday</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+        </select><span id="dwSp"></span></div>
+
+
+    <div id="fcDiv"><label>Favorite Color</label>
+        <select name="fc" id="fc">
+          <option value="0">Select a color</option>
+          <option value="#ff0000">red</option>
+          <option value="#ff8305">orange</option>
+          <option value="#ffe700">yellow</option>
+          <option value="#057e0d">green</option>
+          <option value="#2a137b">blue</option>
+          <option value="#530054">violet</option>
+          <option value="#000000">black</option>
+        </select><span id="fcSp"></span><canvas id="fcCanvas" width="15" height="15" ></canvas></div>
+
+
+<div id="mySub">
+    <button id="submit" > submit </button><button id="reset" type="reset"> reset </button>
+</div>
+</form>
+</body>
+</html>
