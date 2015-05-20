@@ -13,14 +13,67 @@ span{margin-left:20px; color:green; background-color:yellow;}
 <script>
 
 var submitObj = {};
-window.onload= function(e){myEventLoader()};
-function myEventLoader(e){
+document.onreadystatechange = function () {
+  if (document.readyState == "complete") {
+    myEventLoader();
+  }
+}
 
+function myEventLoader(e){
+   document.getElementById("fn").addEventListener('change',firstName);
+   document.getElementById("ln").addEventListener('change',lastName);
+   document.getElementById("fd").addEventListener('change',faveFood);
    document.getElementById("nm").addEventListener('change',findFactor);
+   document.getElementById("dw").addEventListener('change',findDay);
    document.getElementById("fc").addEventListener('change',findColor);
    document.getElementById("submit").addEventListener('click',myValidate);
    document.getElementById("reset").addEventListener('click',resetMe);
 
+}
+
+function firstName(e){
+         var myNameArr = [],
+				name = e.srcElement.value,
+         		myNameStr = "";
+
+				myNameArr = name.split("");
+				for (var t=0; t< myNameArr.length; t++){
+					myNameStr += myNameArr[t] + " ";
+				}
+                document.getElementById("fnSp").innerHTML = myNameStr;
+}
+
+function lastName(e){
+         var myLNameArr = [],
+				lname = e.srcElement.value,
+         		myLNameStr = "";
+
+				myLNameArr = lname.split("");
+				for (var v=myLNameArr.length-1; v>-1; v--){
+					myLNameStr += myLNameArr[v];
+				}
+                document.getElementById("lnSp").innerHTML = myLNameStr;
+}
+
+function faveFood(e){
+         var myFoodArr = [],
+				food = e.srcElement.value,
+				foodChar = null,
+				foodStr = "",
+         		foodSum = null;
+
+				myFoodArr = food.split("");
+				for (var f=0; f< myFoodArr.length; f++){
+					foodChar = food.charCodeAt(f);
+					foodSum = foodSum + parseInt(foodChar);
+					if (f == (myFoodArr.length-1)){
+						foodStr += foodChar + " = " + foodSum;
+					} else {
+						foodStr +=  foodChar.toString() + " + ";
+					}
+
+				}
+                document.getElementById("fdSp").innerHTML = foodStr;
 }
 
 
@@ -48,6 +101,37 @@ function findFactor(e){
     } else {
         document.getElementById("nmSp").innerHTML = "This: "+ num + " is not a number.";
     }
+}
+
+function findDay(e){
+				var myDay = e.srcElement.value,
+					myDStr = "";
+
+				Date.prototype.addDays = function (myDay) {
+						var d = new Date(this.valueOf());
+				        d.setDate(d.getDate() + myDay);
+				        return d;
+				    }
+
+				    Date.prototype.getNextDay= function () {
+				        var d = new Date(this.valueOf());
+				        //return d.addDays(d.getDay());
+				        return d.addDays(myDay);
+				    }
+
+				    Date.prototype.formatDate = function () {
+				        var d = new Date(this.valueOf());
+				        var month = d.getMonth() + 1
+				        var day = d.getDate()
+				        var year = d.getFullYear()
+				        return month + "/" + day + "/" + year;
+    				}
+
+				var d = new Date();
+				myDStr = d.getNextDay().formatDate();
+
+
+                document.getElementById("dwSp").innerHTML = myDStr;
 }
 
 /* this would be more simple to do in a div, but I am trying to be all HTML5 */
@@ -112,14 +196,14 @@ function resetMe(e){
 
     <div id="dwDiv"><label>Favorite Day of the Week</label>
         <select name="dw" id="dw">
-          <option value="0">Select a day</option>
-          <option value="Sunday">Sunday</option>
-          <option value="Monday">Monday</option>
-          <option value="Tuesday">Tuesday</option>
-          <option value="Wednesday">Wednesday</option>
-          <option value="Thursday">Thursday</option>
-          <option value="Friday">Friday</option>
-          <option value="Saturday">Saturday</option>
+          <option value="">Select a day</option>
+          <option value="0">Sunday</option>
+          <option value="1">Monday</option>
+          <option value="2">Tuesday</option>
+          <option value="3">Wednesday</option>
+          <option value="4">Thursday</option>
+          <option value="5">Friday</option>
+          <option value="6">Saturday</option>
         </select><span id="dwSp"></span></div>
 
 
