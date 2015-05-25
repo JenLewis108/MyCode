@@ -12,7 +12,7 @@ span{margin-left:20px; color:green; background-color:yellow;}
 </style>
 <script>
 
-var submitObj = {};
+var submitObj = [];
 document.onreadystatechange = function () {
   if (document.readyState == "complete") {
     myEventLoader();
@@ -104,37 +104,42 @@ function findFactor(e){
 }
 
 function findDay(e){
-				var myDay = e.srcElement.value,
+				var myDay = parseInt(e.srcElement.value),
+					newDate = null,
+					dateOffset = null,
+					myDayInc = null,
 					myDStr = "";
 
-				Date.prototype.addDays = function (myDay) {
-						var d = new Date(this.valueOf());
-				        d.setDate(d.getDate() + myDay);
-				        return d;
-				    }
 
-				    Date.prototype.getNextDay= function () {
-				        var d = new Date(this.valueOf());
-				        //return d.addDays(d.getDay());
-				        return d.addDays(myDay);
-				    }
 
-				    Date.prototype.formatDate = function () {
-				        var d = new Date(this.valueOf());
-				        var month = d.getMonth() + 1
-				        var day = d.getDate()
-				        var year = d.getFullYear()
-				        return month + "/" + day + "/" + year;
-    				}
+				var date = new Date();
+				newDate = parseInt(date.getDay());
 
-				var d = new Date();
-				myDStr = d.getNextDay().formatDate();
+
+				if (newDate<= myDay) {
+						myDayInc = myDay - newDate;
+				} else {
+
+						myDayInc = (7 - newDate) + myDay
+				}
+
+				dateOffset = (24*60*60*1000) * myDayInc;
+				for (var i=0; i<7; i++) {
+					var newOffset = dateOffset + ((i*7)*(24*60*60*1000));
+					date.setTime(date.getTime() + newOffset);
+
+				var day = date.getDate() // prints 19
+				var month = date.getMonth() + 1
+				var year = date.getFullYear()
+				myDStr += month + '/' + day + '/' + year + "  ";
+
+
+}
 
 
                 document.getElementById("dwSp").innerHTML = myDStr;
 }
 
-/* this would be more simple to do in a div, but I am trying to be all HTML5 */
 function findColor(e){
 		var mySrc = e.srcElement,
 		hex = mySrc.value;
@@ -147,18 +152,33 @@ function findColor(e){
 /* function called on submit */
 function myValidate(e){
 
-           	console.log(document.getElementById("myForm").elements);
+            var inputs = document.getElementsByTagName("input");
+		    for (var i = 0; i<inputs.length; i++){
+
+		         if (!inputs[i].value){
+		             alert("Please fill all the inputs");
+		             return false;
+		          }
+		          var myObj ={};
+				  	myObj.name = inputs[i].name;
+		    	 	myObj.value = inputs[i].value;
+		    	 	submitObj.push(myObj);
+     		}
+     		 var selects = document.getElementsByTagName("select");
+					    for (var i = 0; i<selects.length; i++){
+
+					         if (!selects[i].value){
+					             alert("Please fill all the inputs");
+					             return false;
+					          }
+					          var myObj ={};
+							  	myObj.name = selects[i].name;
+					    	 	myObj.value = selects[i].value;
+					    	 	submitObj.push(myObj);
+			     		}
 
 
-           myDivs = document.getElementsByTagName("DIV");
-            for(r in myDivs) {
-						if (myDivs[r] instanceof Element) {
-                            if(myDivs[r].className == "has-error"){
-                                alert("cannot validate, there are errors");
-                                return false;
-							}
-			 		}
-			 }
+
 		console.log(JSON.stringify(submitObj));
         return false;
 }
