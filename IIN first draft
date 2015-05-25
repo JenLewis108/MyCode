@@ -24,6 +24,7 @@ function myEventLoader(e){
    document.getElementById("ln").addEventListener('change',lastName);
    document.getElementById("fd").addEventListener('change',faveFood);
    document.getElementById("nm").addEventListener('change',findFactor);
+   document.getElementById("nm").addEventListener('keypress',checkNum);
    document.getElementById("dw").addEventListener('change',findDay);
    document.getElementById("fc").addEventListener('change',findColor);
    document.getElementById("submit").addEventListener('click',myValidate);
@@ -76,6 +77,19 @@ function faveFood(e){
                 document.getElementById("fdSp").innerHTML = foodStr;
 }
 
+function checkNum(e){
+	var num = e.srcElement.value;
+	 if(num != "" && !(isNaN(parseFloat(num.trim())))&& isFinite(num)){
+	 	document.getElementById("nmSp").innerHTML = "";
+	 	return true;
+	 } else {
+	 	document.getElementById("nmSp").innerHTML = "This is not a number.";
+     	e.srcElement.value = "";
+     }
+
+
+}
+
 
 function findFactor(e){
          var myArr = [],
@@ -84,7 +98,7 @@ function findFactor(e){
          		myInd = null;
 
 
-    if(num.trim().match(/^[0-9]\d*$/)){
+    if(num != "" && !(isNaN(parseFloat(num.trim())))&& isFinite(num)){
             myArr.push(0);
             num = num.trim();
             for (i=1;i<=num;i++){
@@ -99,7 +113,8 @@ function findFactor(e){
                     }
                 document.getElementById("nmSp").innerHTML = myNum;
     } else {
-        document.getElementById("nmSp").innerHTML = "This: "+ num + " is not a number.";
+        document.getElementById("nmSp").innerHTML = "This is not a number.";
+     	e.srcElement.value = "";
     }
 }
 
@@ -111,30 +126,31 @@ function findDay(e){
 					myDStr = "";
 
 
+				if (myDay != "" && myDay > -1){
+					var date = new Date();
+					newDate = parseInt(date.getDay());
 
-				var date = new Date();
-				newDate = parseInt(date.getDay());
+
+					if (newDate<= myDay) {
+							myDayInc = myDay - newDate;
+					} else {
+
+							myDayInc = (7 - newDate) + myDay
+					}
+
+					dateOffset = (24*60*60*1000) * myDayInc;
+					for (var i=0; i<6; i++) {
+						var newOffset = dateOffset + ((i*7)*(24*60*60*1000));
+						date.setTime(date.getTime() + newOffset);
+
+						var day = date.getDate() // prints 19
+						var month = date.getMonth() + 1
+						var year = date.getFullYear()
+						myDStr += month + '/' + day + '/' + year + "  ";
 
 
-				if (newDate<= myDay) {
-						myDayInc = myDay - newDate;
-				} else {
-
-						myDayInc = (7 - newDate) + myDay
+					}
 				}
-
-				dateOffset = (24*60*60*1000) * myDayInc;
-				for (var i=0; i<7; i++) {
-					var newOffset = dateOffset + ((i*7)*(24*60*60*1000));
-					date.setTime(date.getTime() + newOffset);
-
-				var day = date.getDate() // prints 19
-				var month = date.getMonth() + 1
-				var year = date.getFullYear()
-				myDStr += month + '/' + day + '/' + year + "  ";
-
-
-}
 
 
                 document.getElementById("dwSp").innerHTML = myDStr;
@@ -143,10 +159,14 @@ function findDay(e){
 function findColor(e){
 		var mySrc = e.srcElement,
 		hex = mySrc.value;
-        var c = document.getElementById("fcCanvas");
-        var ctx = c.getContext("2d");
-        ctx.fillStyle = hex;
-        ctx.fillRect(0,0,15,15);
+		var c = document.getElementById("fcCanvas");
+		var ctx = c.getContext("2d");
+		if (hex != ""){
+			ctx.fillStyle = hex;
+			ctx.fillRect(0,0,15,15);
+        } else {
+        	ctx.clearRect(0, 0, 15, 15);
+        }
         document.getElementById("fcSp").innerHTML = hex;
 }
 /* function called on submit */
@@ -168,7 +188,7 @@ function myValidate(e){
 					    for (var i = 0; i<selects.length; i++){
 
 					         if (!selects[i].value){
-					             alert("Please fill all the inputs");
+					             alert("Please fill all the selects");
 					             return false;
 					          }
 					          var myObj ={};
@@ -229,7 +249,7 @@ function resetMe(e){
 
     <div id="fcDiv"><label>Favorite Color</label>
         <select name="fc" id="fc">
-          <option value="0">Select a color</option>
+          <option value="">Select a color</option>
           <option value="#ff0000">red</option>
           <option value="#ff8305">orange</option>
           <option value="#ffe700">yellow</option>
