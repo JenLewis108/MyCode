@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IIN Monthly Newsletter</title>
+<style type="text/css">
+        /* imported from Marketo template builder */
+    .ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */  
+    .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Forces Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */ 
+
+    
+    * {
+       -moz-box-sizing:    border-box;   /* Firefox 1, probably can drop this */
+       -webkit-box-sizing: border-box;   /* Safari 3-4, also probably droppable */
+       box-sizing:        border-box;   /* Everything else */
+    }
+    
+    /* Template styles */
+    .preHeader {
+      display: none !important;
+      mso-hide: all;
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+      color: transparent;
+      mso-line-height-rule: exactly;
+      line-height: 0;
+      font-size: 0;
+      overflow: hidden;
+      border: none;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      background: #ffffff;
+      color: #666666;
+      mso-line-height-rule: exactly;
+      line-height:1.42857;
+      -webkit-text-size-adjust:none; 
+      -ms-text-size-adjust:none;
+    }
+
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse;} /* Remove spacing between tables in Outlook 2007 and up */
+    
+    span {font-size: 13px; line-height: 17px; font-family:  Arial, sans-serif; color: #666666;}
+
+    p {
+      /* make consistent margins for web clients */
+      margin: 0;
+      margin-bottom: 1em;
+      margin-top: 0em;
+      padding: 0;
+    }
+
+
+    img {
+      display: block; 
+      outline: none; 
+      text-decoration: none; 
+      -ms-interpolation-mode: bicubic; /* Allow smoother rendering of resized image in Internet Explorer */
+    }
+    a img {
+      border:none; /* Remove border when linking images  */
+    }
+    
+    a, a:visited {
+      text-decoration: none;
+    }
+    
+    a:hover, a:focus {
+      text-decoration: none !important;
+    }
+
+    #outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */ 
+    
+    a.phone {text-decoration: none; color: #666666 !important; pointer-events: auto; cursor: default;} /* phone link, use as wrapper on phone numbers */    
+    
+    @media only screen and (max-width: 639px) {
+      body[class=yahoofix] img {
+        max-width: 100% !important;
+      }
+      
+      body[class=yahoofix] .emailWidth {
+        min-width: 0 !important;
+        width: 100% !important;
+      }
+      
+      body[class=yahoofix] .column {
+        width: 100% !important;
+      }
+      
+      body[class=yahoofix] .mobileCentered {
+        text-align: center !important;
+      }
+      
+      body[class=yahoofix] .mobileHidden {
+        display: none !important;
+      }
+      
+      body[class=yahoofix] .mobileBlock {
+        display: block !important;
+      }
+    }
+    /* end of imported area */
+        table[class=bodytbl] .wrap #content .name { font-size: 24px;}
+        td[class=rightWrapper]{padding-left: 46px !important;}
+        table[class=storyTable] {width: 225px !important; }
+        table[class=storyTableMid] {width: 225px !important;}
+        table[class=storyTableRight] {width: 225px !important; margin-left: 0px !important;}
+        table[class=footer] {width: 500px !important; text-align: center !important;}
+        hr[class=storyRule] { width: 0px !important; display: none !important;}
+        span[class=date]{margin-bottom: 3px !important;}
+        a[class=rdMore]{margin-top: 3px !important;}
+        div#Main_Image {width:500px !important; height:320px !important;}
+        
+        
+        hr[class=deskRule]{width:500px!important; margin-bottom: 30px;}
+        img[class=mainImg]{width:500px!important; height:320px!important;}
+        img[class=storyImg]{width:225px!important; height:144px!important;}
+
+
+        /*@media only screen and (max-width: 499px) */        
+
+        @media only screen and (max-width: 499px) {
+                
+                table[class=innerWrap] {max-width: 370px !important;}
+                table[class=storyTable] {width: 289px !important; margin-left: 0px !important; margin-bottom: 20px !important;}
+                table[class=storyTableMid] {width: 289px !important; margin-left: 0px !important; margin-bottom: 20px !important; margin-top: -20px !important; border-top: 1px solid #999999 !important;}
+                table[class=storyTableRight] {width: 289px !important; margin-left:0px !important; margin-bottom: 20px !important; border-top: 1px solid #999999 !important; }
+                td{max-width: 289px !important;}
+                td[class=leftWrapper]{display:table !important; width:100% !important;}
+                td[class=rightWrapper]{display:table !important; width:100% !important; padding-left: 0px !important; margin-bottom: 15px !important;}
+
+                div#Main_Image {width:289px !important; height:185px !important;}
+                img[class=mainImg]{width:289px!important; height:185px!important; margin-top: 20px !important;}
+                img[class=storyImg]{width:289px!important; height:185px!important; margin-top: 30px !important;}
+
+                div#Logo {width:100%; text-align: center; !important;}
+                 hr[class=storyRule] { width: 287px !important; color:#999999 !important; display: block !important;}
+                 hr[class=storyRuleEnd] { width: 287px !important; display: block !important; }
+                 hr[class=deskRule]{width:287px !important; margin-bottom: 0px !important;}
+                 table[class=myFooterTable] {width: 289px !important; margin-top: -20px !important;}           
+                 span[class=date]{font-size: 16px !important;}
+                 a[class=rdMore]{font-size: 16px !important;}
+                 span#priLine {display:none !important;}
+                 span#priBreak {display:block !important;}         
+        }
+
+</style>
+</head>
+<body class="yahoofix" style="background: #e1e3e4; font-size: 14px; font-family: Arial, sans-serif; color:#333333; margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;mso-line-height-rule: exactly; line-height:1.42857;">
+<!-- Outer Wrap -->
+<table class="outerTable" width="98%" border="0" cellspacing="0" cellpadding="0" bgcolor="#e1e3e4" style="width:98%">
+<!--style="table-layout:fixed"-->
+  <tr>
+    <td>
+     <!-- Inner Wrap -->
+    <table class="innerWrap" bgcolor="#E1e3e4" border="0" cellspacing="0" cellpadding="0" align="center" style="width:580px;margin:0px auto">
+  <tr>
+    <td style="padding:0px 20px;">
+     <div id="Webpage_link">
+ <table bgcolor="#e1e3e4" width="100%" border="0" cellspacing="0" cellpadding="0" style="color:#E6E6E6; font-family:Helvetica, Ariel, sans-serif; font-size:10px;">
+  <tr>
+    <td height="20" align="right"></td>
+  </tr>
+</table>
+</div>
+<!-- Content Wrap -->
+    <table bgcolor="#ffffff" width="100%" border="0" cellspacing="0" cellpadding="20" align="center" style="border:#aaaaaa 1px solid;">
+  <tr>
+    <td>
+    <!-- Header -->
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top" width="100%" >
+      <div class="mktEditable" id="Logo" >
+        <img src="http://s3.amazonaws.com/iin_marketing/logo_202.png" class="logoImg" width="202" height="77" alt="" style="display: block;outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;" />
+    </div>
+    </td>    
+  </tr>
+   <tr>
+    <td valign="top">
+    <hr style="color:#999999;" class="deskRule" size="1" />
+    </td>
+  </tr>
+</table>
+<!-- Body -->
+   <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family:Helvetica, Ariel, sans-serif; color:#333333; font-size:14x; line-height:24px;">
+  <tr>
+    <td style="padding-top:8px;">
+    <div class="mktEditable" id="Main_Image">
+      <a href=""><img src="http://iin.integrativenutrition.com/rs/integrativenutrition/images/500X320.gif" class="mainImg" alt="" style="display: block;outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;" /></a>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:15px 0px;">
+    <div class="mktEditable" id="Main_Text" style="max-width:500px">
+    <span>July 17, 2015</span><br />
+    <span><a style="font-family:Helvetica, Ariel, sans-serif; color:#666666; font-size:22px; line-height:32px;">Sed Aliquet Auctor Velit Ultricies Vehicula</a></span><br />
+</div>
+</td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <hr style="color:#999999;" class="deskRule" size="1" />
+    </td>
+  </tr>
+  </table>
+<table border="0" cellspacing="0" cellpadding="0" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse;">
+<tr>
+<td class="leftWrapper" style="border-collapse:collapse !important; vertical-align:top; text-align:left;" align="left" valign="top">
+ <div class="mktEditable" id="Story1">  
+  <table class="storyTable" border="0" cellspacing="0" cellpadding="0" style="width: 225px; margin-bottom:10px;">
+  <tr>
+    <td valign="top">
+      <a href=""><img src="http://iin.integrativenutrition.com/rs/integrativenutrition/images/225x144.gif"  class="storyImg" alt="" style="display: block;outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;" /></a></td>
+  </tr>
+  <tr>
+      <td valign="top">
+      <br />
+        <span class="date">July 17, 2015</span><br />
+       <span style="color:#666666; font-weight:bold; font-size:18px; line-height:26px;">Sed Aliquet Auctor Velit Ultricies Vehicula</span><br />
+      <span><a href="" class="rdMore" style="font-family:Helvetica, Ariel, sans-serif; color:#666666; font-size:12px; line-height:20px;text-decoration:none" >READ MORE</a></span><br />
+      </td>
+    </tr>
+  </table>
+   </div>
+  </td>
+  <td class="rightWrapper" style="border-collapse:collapse !important; vertical-align:top; text-align:left;" align="left" valign="top">
+  
+  <div class="mktEditable" id="Story2">  
+  <table class="storyTableRight" border="0" cellspacing="0" cellpadding="0" style="width: 225px; margin-left:46px;margin-bottom:10px;">
+  <tr>
+    <td valign="top" >
+    <a href=""><img src="http://iin.integrativenutrition.com/rs/integrativenutrition/images/225x144.gif"  class="storyImg" alt="" style="display: block;outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;" /></a></td>
+  </tr>
+  <tr>
+      <td valign="top">
+      <br />
+        <span class="date">July 17, 2015</span><br />
+       <span style="color:#666666; font-weight:bold; font-size:18px; line-height:26px;">Sed Aliquet Auctor Velit Ultricies Vehicula</span><br />
+      <span><a href="" class="rdMore" style="font-family:Helvetica, Ariel, sans-serif; color:#666666; font-size:12px; line-height:20px;text-decoration:none" >READ MORE</a></span><br />
+      </td>
+    </tr>
+  </table>
+   </div>
+</td>
+</tr>
+<tr>
+ <td class="leftWrapper" style="border-collapse:collapse !important; vertical-align:top; text-align:left;" align="left" valign="top">
+<div class="mktEditable" id="Story3">  
+  <table class="storyTableMid" border="0" cellspacing="0" cellpadding="0" style="width: 225px;margin-bottom:10px;;">
+  <tr>
+    <td valign="top">
+      <a href=""><img src="http://iin.integrativenutrition.com/rs/integrativenutrition/images/225x144.gif"  class="storyImg" alt="" style="display: block;outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;" /></a></td>
+  </tr>
+  <tr>
+      <td valign="top">
+      <br />
+        <span class="date">July 17, 2015</span><br />
+       <span style="color:#666666; font-weight:bold; font-size:18px; line-height:26px;">Sed Aliquet Auctor Velit Ultricies Vehicula</span><br />
+      <span><a href="" class="rdMore" style="font-family:Helvetica, Ariel, sans-serif; color:#666666; font-size:12px; line-height:20px;text-decoration:none" >READ MORE</a></span><br />
+      </td>
+    </tr>
+  </table>
+   </div>
+  </td>
+  <td class="rightWrapper" style="border-collapse:collapse !important; vertical-align:top; text-align:left;" align="left" valign="top">
+  <div class="mktEditable" id="Story4">  
+  <table class="storyTableRight" border="0" cellspacing="0" cellpadding="0" style="width: 225px;margin-left:46px;margin-bottom:10px;">
+  <tr>
+    <td valign="top" >
+     <a href=""><img src="http://iin.integrativenutrition.com/rs/integrativenutrition/images/225x144.gif"  class="storyImg" alt="" style="display: block;outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;" /></a></td>
+  </tr>
+  <tr>
+      <td valign="top">
+      <br />
+        <span class="date">July 17, 2015</span><br />
+       <span style="color:#666666; font-weight:bold; font-size:18px; line-height:26px;">Sed Aliquet Auctor Velit Ultricies Vehicula</span><br />
+      <span><a href="" class="rdMore" style="font-family:Helvetica, Ariel, sans-serif; color:#666666; font-size:12px; line-height:20px;text-decoration:none" >READ MORE</a></span><br />
+      </td>
+    </tr>
+  </table>
+   </div>
+</td>
+</tr>
+</table>
+<br />
+ 
+                  <!-- end: Main Content -->
+<!-- Footer -->
+                   
+                    <table id="myFooterTable" border="0" cellspacing="0" cellpadding="0" align="center" width="100%" style="text-align:center; margin-top:0px;padding-top:0px; border-collapse:collapse;">
+<tr>
+                    <td><hr style="color:#999999;display:block;" size="1" class="storyRuleEnd" /></td>
+                  </tr>
+                    <tr>
+                      <td style="font-family:Arial, Helvetica, sans-serif; text-align:center">
+                        <div class="mktEditable" id="footer" style="text-align:center">
+
+                          <table id="socialTable" border="0" cellspacing="0" cellpadding="0" align="center" style="margin:0px auto 10px;border-collapse:collapse;">
+                          <tr>
+                              <td>
+                                 <a href="https://www.facebook.com/NutritionSchool"><img src="http://s3.amazonaws.com/iin_marketing/email_templates/facebook.png" alt="Facebook" title="Facebook" width="44" height="44" border="0" style="max-width:44px;max-height:44px;display: block;" /></a>
+                              </td>
+                              <td>
+                                  <a href="https://twitter.com/NutritionSchool"><img src="http://s3.amazonaws.com/iin_marketing/email_templates/twitter.png" alt="Twitter" title="Twitter" width="44" height="44" border="0" style="max-width:44px;max-height:44px;display: block;" /></a>
+                              </td>
+                              <td>
+                                  <a href="www.linkedin.com/company/institute-for-integrative-nutrition"><img src="http://s3.amazonaws.com/iin_marketing/email_templates/linkedin.png" alt="LinkedIn" title="LinkedIn" width="44" height="44" border="0" style="max-width:44px;max-height:44px;display: block;" /></a>
+                              </td>
+                              <td>
+                                  <a href="http://instagram.com/nutritionschool"><img src="http://s3.amazonaws.com/iin_marketing/email_templates/instagram.png" alt="Instagram" title="Instagram" width="44" height="44" border="0" style="max-width:44px;max-height:44px;display: block;" /></a>
+                              </td>
+                              <td>
+                                  <a href="http://www.pinterest.com/nutritionschool"><img src="http://s3.amazonaws.com/iin_marketing/email_templates/pintrest.png" alt="Pinterest" title="Pinterest" width="44" height="44" border="0" style="max-width:44px;max-height:44px;display: block;" /></a>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <p style="line-height:24px;">
+                            <b>Institute for Integrative Nutrition®</b><br />
+                            <b>U.S. <a style="color:#333; text-decoration:none;" href="tel:+1-877-730-5444">(877) 730-5444</a> | International <a href="tel:+1-212-730-5433" style="color:#333; text-decoration:none;">+1 (212) 730-5433</a></b><br /><br />
+                            Monday-Thursday 8:30am - Midnight Eastern<br />
+                            Friday 9:00am - 7:00pm Eastern<br />
+                            Saturday 9:00am - 5:30pm Eastern<br />
+                            <a style="color:#333; text-decoration:none;" href="mailto:admissions@integrativenutrition.com"> admissions@integrativenutrition.com</a><br />
+                          </p>
+
+                          <div style="color:#ccc; line-height:24px;">
+                            <p>
+                              <a style="color:#ccc; text-decoration:none;" href="http://www.integrativenutrition.com" target="_blank">Institute for Integrative Nutrition</a><span id="priLine" style="color:#ccc;display:inline-block; margin:0">&nbsp;|&nbsp;</span><span id="priBreak" style="display:none;margin:0"></span><a style="color:#ccc; text-decoration:none;" href="http://www.integrativenutrition.com/lp/privacypolicy" target="_blank">Privacy Policy</a>
+                            </p>
+
+                            <p style="line-height:24px; font-size:14px;">
+                            You received this email because you subscribed to Integrative Nutrition's communications by website, phone, email request or at an event. To ensure our emails reach your inbox, please add <a style="color:#e51b24; text-decoration:none" href="mailto:admissions@integrativenutrition.com"> admissions@integrativenutrition.com</a><br />  to your address book.<br />
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+
+                    </tr>
+                    <tr>
+                      <td height="30" style="font-size:1px;border-collapse:collapse; margin:0; padding:0;">&nbsp;</td>
+                    </tr>
+                  </table>
+                  <!-- end: Footer -->
+
+                </td>
+                <!-- end: Lt Column -->
+
+                <td width="20" style="font-size:1px;border-collapse:collapse; margin:0; padding:0;">&nbsp;</td>
+              </tr>
+              <tr>
+                <td height="20" colspan="5" style="font-size:1px;border-collapse:collapse; margin:0; padding:0;">&nbsp;</td>
+              </tr>
+
+            </table>
+
+          </td>
+        </tr>
+      </table>
+      <!-- End Inner Wrap -->
+    </td>
+  </tr>
+</table>
+<!-- End Outer Wrap -->
+
+</body>
+</html>
